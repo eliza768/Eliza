@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Imposter Cards</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <meta name="theme-color" content="#111827">
+</head>
+<body>
+  <main class="phone">
+    <section id="setup" class="screen active">
+      <div class="logo">🎭</div>
+      <h1>Imposter Cards</h1>
+      <p class="subtitle">Ein geheimes Wort. Eine falsche Person. Findet den Imposter!</p>
+
+      <div class="panel">
+        <label>Anzahl Spieler</label>
+        <div class="counter">
+          <button id="minus">−</button>
+          <input id="players" type="number" min="3" max="12" value="4">
+          <button id="plus">+</button>
+        </div>
+
+        <label>Kategorie</label>
+        <select id="category">
+          <option value="all">Alle Kategorien</option>
+          <option value="food">Essen</option>
+          <option value="places">Orte</option>
+          <option value="sports">Sport</option>
+          <option value="movies">Filme</option>
+          <option value="school">Schule</option>
+        </select>
+      </div>
+
+      <button id="start" class="big">Runde starten</button>
+    </section>
+
+    <section id="cardScreen" class="screen">
+      <div class="topline">
+        <span id="playerLabel">Person 1 von 4</span>
+        <span>Geheim</span>
+      </div>
+
+      <h2>Gib das Gerät an die richtige Person weiter.</h2>
+
+      <button id="flipCard" class="flip-card">
+        <span class="card-small">Tippen zum Aufdecken</span>
+        <span id="cardText" class="card-main">?</span>
+      </button>
+
+      <button id="next" class="big hidden">Weitergeben</button>
+    </section>
+
+    <section id="discussion" class="screen">
+      <div class="logo">🕵️</div>
+      <h1>Diskutiert!</h1>
+      <p class="subtitle">Alle haben ihre Karte gesehen. Jetzt müsst ihr herausfinden, wer der Imposter ist.</p>
+      <button id="solve" class="big">Auflösen</button>
+    </section>
+
+    <section id="result" class="screen">
+      <div class="logo">✨</div>
+      <h1>Auflösung</h1>
+      <div class="result-box">
+        <p>Das Wort war:</p>
+        <h2 id="wordResult"></h2>
+        <p>Der Imposter war:</p>
+        <h2>Person <span id="imposterResult"></span></h2>
+      </div>
+      <button id="again" class="big">Neue Runde</button>
+    </section>
+  </main>
+
+  <script src="./app.js"></script>
+</body>
+</html>
